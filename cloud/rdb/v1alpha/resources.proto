@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package cloud.rdb.v1alpha;
+
+option go_package = "github.com/nokamoto/demo20-apis/cloud/rdb/v1alpha";
+
+message Cluster {
+  string name = 1;
+  int32 replicas = 2;
+  repeated string instances = 3;
+}

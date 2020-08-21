@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package cloud.compute.v1alpha;
+
+option go_package = "github.com/nokamoto/demo20-apis/cloud/compute/v1alpha";
+
+message Instance {
+  // format: `"instances/{instance_id}"`
+  string name = 1;
+  string parent = 2;
+  repeated string labels = 3;
+}
