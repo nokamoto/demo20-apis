@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package cloud.api;
+
+option go_package = "github.com/nokamoto/demo20-apis/cloud/api";
+
+import "google/protobuf/descriptor.proto";
+
+message Authz {
+  string permission = 1;
+  bool insecure = 2;
+}
+
+message AuthzConfig {
+  map<string, AuthzConfig> config = 1;
+}
+
+extend google.protobuf.MethodOptions {
+  Authz authz = 50000;
+}

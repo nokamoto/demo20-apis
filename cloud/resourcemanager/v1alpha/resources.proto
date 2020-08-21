@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package cloud.resourcemanager.v1alhpa;
+
+option go_package = "github.com/nokamoto/demo20-apis/cloud/resourcemanager/v1alpha";
+
+message Project {
+  // format: `"projects/{project_id}"`
+  string name = 1;
+  string display_name = 2;
+}
