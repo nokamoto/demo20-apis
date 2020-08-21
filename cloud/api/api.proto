@@ -7,7 +7,7 @@ option go_package = "github.com/nokamoto/demo20-apis/cloud/api";
 import "google/protobuf/descriptor.proto";
 
 message Authz {
-  string permission = 1;
+    string permission = 1;
   bool insecure = 2;
 }
 
