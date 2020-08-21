@@ -1,0 +1,16 @@
+name: Protobuf
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    container: uber/prototool:1.10.0
+    steps:
+    - uses: actions/checkout@v2
+    - run: prototool format -d .

@@ -1,0 +1,104 @@
+syntax = "proto3";
+
+package cloud.iam.admin.v1alpha;
+
+option go_package = "github.com/nokamoto/demo20-apis/cloud/iam/admin/v1alpha";
+
+import "cloud/api/api.proto";
+import "cloud/iam/v1alpha/resources.proto";
+import "google/protobuf/empty.proto";
+import "google/protobuf/field_mask.proto";
+
+service Iam {
+  rpc CreateRole(CreateRoleRequest) returns (cloud.iam.v1alpha.Role) {
+    option (cloud.api.authz) = {
+      insecure: true
+    };
+  }
+  rpc UpdateRole(UpdateRoleRequest) returns (cloud.iam.v1alpha.Role) {
+    option (cloud.api.authz) = {
+      insecure: true
+    };
+  }
+  rpc DeleteRole(DeleteRoleRequest) returns (google.protobuf.Empty) {
+    option (cloud.api.authz) = {
+      insecure: true
+    };
+  }
+  rpc ListRole(ListRoleRequest) returns (ListRoleResponse) {
+    option (cloud.api.authz) = {
+      insecure: true
+    };
+  }
+  rpc GetRole(GetRoleRequest) returns (cloud.iam.v1alpha.Role) {
+    option (cloud.api.authz) = {
+      insecure: true
+    };
+  }
+  rpc AddRoleBinding(AddRoleBindingRequest) returns (cloud.iam.v1alpha.RoleBinding) {
+    option (cloud.api.authz) = {
+      insecure: true
+    };
+  }
+  rpc RemoveRoleBinding(RemoveRoleBindingRequest) returns (google.protobuf.Empty) {
+    option (cloud.api.authz) = {
+      insecure: true
+    };
+  }
+  rpc ListRoleBinding(ListRoleBindingRequest) returns (ListRoleBindingResponse) {
+    option (cloud.api.authz) = {
+      insecure: true
+    };
+  }
+}
+
+message CreateRoleRequest {
+  string role_id = 1;
+  cloud.iam.v1alpha.Role role = 2;
+}
+
+message UpdateRoleRequest {
+  cloud.iam.v1alpha.Role role = 1;
+  google.protobuf.FieldMask update_mask = 2;
+  enum UpdatePermissionOption {
+    APPEND = 0;
+    OVERWRITE = 2;
+  }
+  UpdatePermissionOption update_permission_option = 3;
+}
+
+message DeleteRoleRequest {
+  string name = 1;
+}
+
+message ListRoleRequest {
+  string page_token = 1;
+  int32 page_size = 2;
+}
+
+message ListRoleResponse {
+  string next_page_token = 1;
+  repeated cloud.iam.v1alpha.Role roles = 2;
+}
+
+message GetRoleRequest {
+  string name = 1;
+}
+
+message AddRoleBindingRequest {
+  cloud.iam.v1alpha.RoleBinding role_binding = 1;
+}
+
+message RemoveRoleBindingRequest {
+  cloud.iam.v1alpha.RoleBinding role_binding = 1;
+}
+
+message ListRoleBindingRequest {
+  string page_token = 1;
+  int32 page_size = 2;
+}
+
+message ListRoleBindingResponse {
+  string next_page_token = 1;
+  repeated cloud.iam.v1alpha.RoleBinding role_bindings = 2;
+}

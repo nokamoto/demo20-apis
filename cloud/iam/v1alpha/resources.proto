@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package cloud.iam.v1alpha;
+
+option go_package = "github.com/nokamoto/demo20-apis/cloud/iam/v1alpha";
+
+message Permission {
+  // format: `"permissions/{permission_id}"`
+  string name = 1;
+}
+
+message Role {
+  // format: `"roles/{role_id}"` or `"projects/{project_id}/roles/{role_id}"`
+  string name = 1;
+  string display_name = 2;
+  repeated string permissions = 3;
+  string parent = 4;
+}
+
+message RoleBinding {
+  string role = 1;
+  string user = 2;
+  string parent = 3;
+}

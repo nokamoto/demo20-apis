@@ -1,0 +1,66 @@
+syntax = "proto3";
+
+package cloud.rdb.v1alpha;
+
+option go_package = "github.com/nokamoto/demo20-apis/cloud/rdb/v1alpha";
+
+import "cloud/api/api.proto";
+import "cloud/rdb/v1alpha/resources.proto";
+import "google/protobuf/empty.proto";
+import "google/protobuf/field_mask.proto";
+
+service Rdb {
+  rpc CreateCluster(CreateClusterRequest) returns (Cluster) {
+    option (cloud.api.authz) = {
+      permission: "rdb.cluster.write"
+    };
+  }
+  rpc DeleteCluster(DeleteClusterRequest) returns (google.protobuf.Empty) {
+    option (cloud.api.authz) = {
+      permission: "rdb.cluster.write"
+    };
+  }
+  rpc GetCluster(GetClusterRequest) returns (Cluster) {
+    option (cloud.api.authz) = {
+      permission: "rdb.cluster.read"
+    };
+  }
+  rpc ListCluster(ListClusterRequest) returns (ListClusterResponse) {
+    option (cloud.api.authz) = {
+      permission: "rdb.cluster.read"
+    };
+  }
+  rpc UpdateCluster(UpdateClusterRequest) returns (Cluster) {
+    option (cloud.api.authz) = {
+      permission: "rdb.cluster.write"
+    };
+  }
+}
+
+message CreateClusterRequest {
+  string cluster_id = 1;
+  Cluster cluster = 2;
+}
+
+message DeleteClusterRequest {
+  string name = 1;
+}
+
+message GetClusterRequest {
+  string name = 1;
+}
+
+message ListClusterRequest {
+  string page_token = 1;
+  int32 page_size = 2;
+}
+
+message ListClusterResponse {
+  string next_page_token = 1;
+  repeated Cluster clusters = 2;
+}
+
+message UpdateClusterRequest {
+  Cluster cluster = 1;
+  google.protobuf.FieldMask update_mask = 2;
+}
