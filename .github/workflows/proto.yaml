@@ -20,5 +20,7 @@ jobs:
     container: nokamotohub/demo20-protoc:latest
     steps:
     - uses: actions/checkout@v2
+    - run: chmod u+x ./scripts/build.sh
     - run: ./scripts/build.sh
+    - run: chmod u-x ./scripts/build.sh
     - run: git diff --exit-code
