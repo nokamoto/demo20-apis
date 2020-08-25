@@ -8,4 +8,5 @@ message Cluster {
   string name = 1;
   int32 replicas = 2;
   repeated string instances = 3;
+  string parent = 4;
 }
