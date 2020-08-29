@@ -50,6 +50,16 @@ service Iam {
       insecure: true
     };
   }
+  rpc CreatePermission(CreatePermissionRequest) returns (cloud.iam.v1alpha.Permission) {
+    option (cloud.api.authz) = {
+      insecure: true
+    };
+  }
+  rpc DeletePermission(DeletePermissionRequest) returns (google.protobuf.Empty) {
+    option (cloud.api.authz) = {
+      insecure: true
+    };
+  }
 }
 
 message CreateRoleRequest {
@@ -101,4 +111,13 @@ message ListRoleBindingRequest {
 message ListRoleBindingResponse {
   string next_page_token = 1;
   repeated cloud.iam.v1alpha.RoleBinding role_bindings = 2;
+}
+
+message CreatePermissionRequest {
+  string permission_id = 1;
+  cloud.iam.v1alpha.Permission permission = 2;
+}
+
+message DeletePermissionRequest {
+  string name = 1;
 }
