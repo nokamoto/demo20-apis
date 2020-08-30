@@ -60,6 +60,26 @@ service Iam {
       insecure: true
     };
   }
+  rpc CreateMachineUser(CreateMachineUserRequest) returns (cloud.iam.v1alpha.MachineUser) {
+    option (cloud.api.authz) = {
+      insecure: true
+    };
+  }
+  rpc DeleteMachineUser(DeleteMachineUserRequest) returns (google.protobuf.Empty) {
+    option (cloud.api.authz) = {
+      insecure: true
+    };
+  }
+  rpc ListMachineUser(ListMachineUserRequest) returns (ListMachineUserResponse) {
+    option (cloud.api.authz) = {
+      insecure: true
+    };
+  }
+  rpc AuthorizeMachineUser(AuthorizeMachineUserRequest) returns (AuthorizeMachineUserResponse) {
+    option (cloud.api.authz) = {
+      insecure: true
+    };
+  }
 }
 
 message CreateRoleRequest {
@@ -119,5 +139,31 @@ message CreatePermissionRequest {
 }
 
 message DeletePermissionRequest {
+  string name = 1;
+}
+
+message CreateMachineUserRequest {
+  cloud.iam.v1alpha.MachineUser machine_user = 1;
+}
+
+message DeleteMachineUserRequest {
+  string name = 1;
+}
+
+message ListMachineUserRequest {
+  string page_token = 1;
+  int32 page_size = 2;
+}
+
+message ListMachineUserResponse {
+  string next_page_token = 1;
+  repeated cloud.iam.v1alpha.MachineUser machine_users = 2;
+}
+
+message AuthorizeMachineUserRequest {
+  string api_key = 1;
+}
+
+message AuthorizeMachineUserResponse {
   string name = 1;
 }
