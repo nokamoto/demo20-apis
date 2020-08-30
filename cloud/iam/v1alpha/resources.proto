@@ -28,4 +28,5 @@ message MachineUser {
   string name = 1;
   string display_name = 2;
   string api_key = 3;
+  string parent = 4;
 }
