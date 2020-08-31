@@ -18,3 +18,13 @@ message AuthzConfig {
 extend google.protobuf.MethodOptions {
   Authz authz = 50000;
 }
+
+message Metadata {
+  oneof credential {
+    string machine_user_api_key = 1;
+  }
+  oneof user {
+    string machine_user = 2;
+  }
+  string parent = 3;
+}
