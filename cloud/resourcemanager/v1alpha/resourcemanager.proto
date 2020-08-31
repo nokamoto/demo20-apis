@@ -36,6 +36,4 @@ message UpdateProjectRequest {
   google.protobuf.FieldMask update_mask = 2;
 }
 
-message GetProjectRequest {
-  string name = 1;
-}
+message GetProjectRequest {}
