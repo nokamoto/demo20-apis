@@ -50,6 +50,21 @@ service Iam {
       permission: "iam.rolebinding.read"
     };
   }
+  rpc CreateMachineUser(CreateMachineUserRequest) returns (cloud.iam.v1alpha.MachineUser) {
+    option (cloud.api.authz) = {
+      permission: "iam.rolebinding.read"
+    };
+  }
+  rpc DeleteMachineUser(DeleteMachineUserRequest) returns (google.protobuf.Empty) {
+    option (cloud.api.authz) = {
+      permission: "iam.rolebinding.read"
+    };
+  }
+  rpc ListMachineUser(ListMachineUserRequest) returns (ListMachineUserResponse) {
+    option (cloud.api.authz) = {
+      permission: "iam.rolebinding.read"
+    };
+  }
 }
 
 message CreateRoleRequest {
@@ -101,4 +116,32 @@ message ListRoleBindingRequest {
 message ListRoleBindingResponse {
   string next_page_token = 1;
   repeated RoleBinding role_bindings = 2;
+}
+
+message CreateMachineUserRequest {
+  MachineUser machine_user = 1;
+}
+
+message DeleteMachineUserRequest {
+  string name = 1;
+}
+
+message ListMachineUserRequest {
+  string page_token = 1;
+  int32 page_size = 2;
+}
+
+message ListMachineUserResponse {
+  string next_page_token = 1;
+  repeated MachineUser machine_users = 2;
+}
+
+message AuthorizeMachineUserRequest {
+  string api_key = 1;
+  string permission = 2;
+  string parent = 3;
+}
+
+message AuthorizeMachineUserResponse {
+  MachineUser machine_user = 1;
 }
