@@ -12,7 +12,7 @@ message Authz {
 }
 
 message AuthzConfig {
-  map<string, AuthzConfig> config = 1;
+  map<string, Authz> config = 1;
 }
 
 extend google.protobuf.MethodOptions {
