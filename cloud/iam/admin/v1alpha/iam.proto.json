@@ -1,0 +1,46 @@
+{
+  "config": {
+    "/cloud.iam.admin.v1alpha.Iam/AddRoleBinding": {
+      "insecure": true
+    },
+    "/cloud.iam.admin.v1alpha.Iam/AuthorizeMachineUser": {
+      "insecure": true
+    },
+    "/cloud.iam.admin.v1alpha.Iam/CreateMachineUser": {
+      "insecure": true
+    },
+    "/cloud.iam.admin.v1alpha.Iam/CreatePermission": {
+      "insecure": true
+    },
+    "/cloud.iam.admin.v1alpha.Iam/CreateRole": {
+      "insecure": true
+    },
+    "/cloud.iam.admin.v1alpha.Iam/DeleteMachineUser": {
+      "insecure": true
+    },
+    "/cloud.iam.admin.v1alpha.Iam/DeletePermission": {
+      "insecure": true
+    },
+    "/cloud.iam.admin.v1alpha.Iam/DeleteRole": {
+      "insecure": true
+    },
+    "/cloud.iam.admin.v1alpha.Iam/GetRole": {
+      "insecure": true
+    },
+    "/cloud.iam.admin.v1alpha.Iam/ListMachineUser": {
+      "insecure": true
+    },
+    "/cloud.iam.admin.v1alpha.Iam/ListRole": {
+      "insecure": true
+    },
+    "/cloud.iam.admin.v1alpha.Iam/ListRoleBinding": {
+      "insecure": true
+    },
+    "/cloud.iam.admin.v1alpha.Iam/RemoveRoleBinding": {
+      "insecure": true
+    },
+    "/cloud.iam.admin.v1alpha.Iam/UpdateRole": {
+      "insecure": true
+    }
+  }
+}

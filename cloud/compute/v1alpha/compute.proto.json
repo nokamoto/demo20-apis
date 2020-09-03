@@ -1,0 +1,16 @@
+{
+  "config": {
+    "/cloud.compute.v1alpha.Compute/CreateInstance": {
+      "permission": "compute.instance.write"
+    },
+    "/cloud.compute.v1alpha.Compute/DeleteInstance": {
+      "permission": "compute.instance.write"
+    },
+    "/cloud.compute.v1alpha.Compute/GetInstance": {
+      "permission": "compute.instance.read"
+    },
+    "/cloud.compute.v1alpha.Compute/ListInstance": {
+      "permission": "compute.instance.read"
+    }
+  }
+}

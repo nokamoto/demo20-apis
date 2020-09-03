@@ -1,0 +1,19 @@
+{
+  "config": {
+    "/cloud.rdb.v1alpha.Rdb/CreateCluster": {
+      "permission": "rdb.cluster.write"
+    },
+    "/cloud.rdb.v1alpha.Rdb/DeleteCluster": {
+      "permission": "rdb.cluster.write"
+    },
+    "/cloud.rdb.v1alpha.Rdb/GetCluster": {
+      "permission": "rdb.cluster.read"
+    },
+    "/cloud.rdb.v1alpha.Rdb/ListCluster": {
+      "permission": "rdb.cluster.read"
+    },
+    "/cloud.rdb.v1alpha.Rdb/UpdateCluster": {
+      "permission": "rdb.cluster.write"
+    }
+  }
+}
