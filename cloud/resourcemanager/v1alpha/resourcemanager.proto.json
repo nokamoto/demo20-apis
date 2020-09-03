@@ -1,0 +1,13 @@
+{
+  "config": {
+    "/cloud.resourcemanager.v1alhpa.ResourceManager/CreateProject": {
+      "insecure": true
+    },
+    "/cloud.resourcemanager.v1alhpa.ResourceManager/GetProject": {
+      "permission": "resourcemanager.project.read"
+    },
+    "/cloud.resourcemanager.v1alhpa.ResourceManager/UpdateProject": {
+      "permission": "resourcemanager.project.write"
+    }
+  }
+}

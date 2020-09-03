@@ -15,7 +15,7 @@ jobs:
     - uses: actions/checkout@v2
     - run: prototool format -d .
   go:
-    name: protoc-gen-go
+    name: protoc-gen-*
     runs-on: ubuntu-latest
     container: nokamotohub/demo20-protoc:latest
     steps:

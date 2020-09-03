@@ -1,0 +1,37 @@
+{
+  "config": {
+    "/cloud.iam.v1alpha.Iam/AddRoleBinding": {
+      "permission": "iam.rolebinding.write"
+    },
+    "/cloud.iam.v1alpha.Iam/CreateMachineUser": {
+      "permission": "iam.rolebinding.read"
+    },
+    "/cloud.iam.v1alpha.Iam/CreateRole": {
+      "permission": "iam.role.write"
+    },
+    "/cloud.iam.v1alpha.Iam/DeleteMachineUser": {
+      "permission": "iam.rolebinding.read"
+    },
+    "/cloud.iam.v1alpha.Iam/DeleteRole": {
+      "permission": "iam.role.write"
+    },
+    "/cloud.iam.v1alpha.Iam/GetRole": {
+      "permission": "iam.role.read"
+    },
+    "/cloud.iam.v1alpha.Iam/ListMachineUser": {
+      "permission": "iam.rolebinding.read"
+    },
+    "/cloud.iam.v1alpha.Iam/ListRole": {
+      "permission": "iam.role.read"
+    },
+    "/cloud.iam.v1alpha.Iam/ListRoleBinding": {
+      "permission": "iam.rolebinding.read"
+    },
+    "/cloud.iam.v1alpha.Iam/RemoveRoleBinding": {
+      "permission": "iam.rolebinding.write"
+    },
+    "/cloud.iam.v1alpha.Iam/UpdateRole": {
+      "permission": "iam.role.write"
+    }
+  }
+}
